@@ -4,18 +4,33 @@ namespace LabaOOP1 {
     {
         static void Main()
         {
-            drobi first = new drobi(4, 3);
-            drobi second = new drobi(3, 5);
-            drobi test = new drobi(12, 15);
-            drobi res = first * second;
-            Console.WriteLine("result: " + res.ToString());
-            Console.WriteLine("result: " + first.ToString());
-            res = second - first;
-            Console.WriteLine("result: " + res.ToString());
-            Console.WriteLine(first != second);
-            Console.WriteLine(first == second);
-            Console.WriteLine(first > second);
-            Console.WriteLine(first < second);
+            TimeEuro timeEu = new(); 
+            TimeUS timeUS = new();
+            Console.WriteLine(timeEu.ShowTime()); 
+            Console.WriteLine(timeUS.ShowTime());
+            TimeEuDecorator timeEuDecorator = new TimeEuDecorator(new TimeEuro());
+            TimeUSDecorator timeUSDecorator = new TimeUSDecorator(new TimeUS());
+            Console.WriteLine(timeEuDecorator.ShowTime());
+            Console.WriteLine(timeUSDecorator.ShowTime());
+
+            Console.WriteLine("Вывод дерева: ");
+            Tree first = new Tree("Прадед");
+            Tree second = new Tree("Дед");
+            Tree third = new Tree("Отец");
+            Tree fourth = new Tree("Сын");
+            Tree fifth = new Tree("Внучка");
+
+            first.Add(second);
+            first.Add(third);
+            first.Add(fourth);
+            first.Add(fifth);
+            second.Add(third);
+            second.Add(fourth);
+            second.Add(fifth);
+            third.Add(fourth);
+            third.Add(fifth);
+            fourth.Add(fifth);
+            first.output();
         }
     }
 }
