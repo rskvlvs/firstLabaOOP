@@ -15,6 +15,15 @@ namespace TestProject1
 
             Assert.That(equals.getNumerator() == fact.getNumerator(), Is.True);
             Assert.That(equals.getDenominator() == fact.getDenominator(), Is.True);
+
+            a = new drobi(1, 9);
+            b = new drobi(3, 9);
+
+            equals = new drobi(4, 9);
+            fact = a + b;
+
+            Assert.That(equals.getNumerator() == fact.getNumerator(), Is.True);
+            Assert.That(equals.getDenominator() == fact.getDenominator(), Is.True);
         }
         [Test]
         public void minus()
@@ -27,6 +36,13 @@ namespace TestProject1
 
             Assert.That(equals.getNumerator() == fact.getNumerator(), Is.True);
             Assert.That(equals.getDenominator() == fact.getDenominator(), Is.True);
+
+            a = new drobi(6, 10);
+            b = new drobi(3, 5);
+
+            equals = new drobi(0, 5);
+            fact = a - b;
+            
         }
         [Test]
         public void umno()

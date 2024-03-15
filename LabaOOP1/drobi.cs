@@ -36,7 +36,6 @@ namespace LabaOOP1
                     b /= del;
                 }
             }
-            //numerator = a; denominator = b;
 
             Numerator = a;
             Denominator = b;
@@ -78,7 +77,6 @@ namespace LabaOOP1
 
         public static drobi operator --(drobi first)
         {
-            //drobi second = new drobi(1, 1);
             first = first - new drobi (1, 1);
             return first; 
         }
