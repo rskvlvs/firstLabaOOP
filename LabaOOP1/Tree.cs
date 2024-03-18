@@ -23,28 +23,23 @@ namespace LabaOOP1
         {
             son.Add(tree);
         }
-        public void output()
+        public List<string> output()
         {
-            int count = 1;
-            if(son.Count == 0)
+            var list = new List<string>();
+
+            list.Add(data);
+
+            if (son.Count == 0)
             {
-                return;
+                return list;
             }
-            Console.WriteLine("Name: " + this.data);
+
             foreach (var item in son)
             {
-                Console.Write("Position: " + count);
-                if (item.data == "Внучка" || item.data == "Дочка" || item.data == "Мама")
-                    Console.WriteLine(", Daugther: " + item.data);
-                else
-                    Console.WriteLine(", Son: " + item.data);
-                count++;
+                list.AddRange(item.output());
             }
-            Console.WriteLine();
-            foreach(var item in son)
-            {
-                item.output();
-            }
+            
+            return list;
         }
     }
 }

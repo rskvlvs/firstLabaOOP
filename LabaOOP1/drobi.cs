@@ -36,7 +36,11 @@ namespace LabaOOP1
                     b /= del;
                 }
             }
-
+            if(b < 0)
+            {
+                a *=-1;
+                b *=-1;
+            }
             Numerator = a;
             Denominator = b;
             
@@ -44,7 +48,7 @@ namespace LabaOOP1
 
         public override string ToString()
         {
-            if (Math.Abs(Denominator) == 1 && (Numerator < 0 && Denominator > 0) || (Numerator > 0 && Denominator < 0)) return ("-" + Math.Abs(Numerator).ToString());
+            if (Math.Abs(Denominator) == 1 && ((Numerator < 0 && Denominator > 0) || (Numerator > 0 && Denominator < 0))) return ("-" + Math.Abs(Numerator).ToString());
             else if (Math.Abs(Denominator) == 1) return (Math.Abs(Numerator).ToString());
             else if((Numerator < 0 && Denominator > 0) || (Numerator > 0 && Denominator < 0)) return ("-" + Math.Abs(Numerator).ToString() + "/" + Math.Abs(Denominator).ToString());
             return (Numerator.ToString() + "/" + Denominator.ToString());
